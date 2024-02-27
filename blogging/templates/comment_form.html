@@ -1,0 +1,24 @@
+<!-- templates/comment_form.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Comments{% endblock %}
+
+{% block content %}
+
+
+<h1>{{Action}} Comments</h1>
+<form method="POST">
+{% csrf_token %}
+
+{{comment_form}}
+
+<button type="submit" class="btn btn-primary" onclick="save()">Submit</button>
+
+</form>
+<script>
+    function save(){
+        alert('Data saved successfully');
+    }
+</script>
+{% endblock %}

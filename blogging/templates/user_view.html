@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}User Info{% endblock %}
+{% block content %}
+<h1> {{user.first_name}} {{user.last_name}}</h1>
+<hr>
+<p class="lead">Email: {{user.email}} </p>
+<hr>
+<p class="lead">User Name: {{user.user_name}}</p>
+<p class="lead">Password: {{ user.password }}</p>
+<hr>
+<p class="lead">Posts: </p>
+{% if posts %}
+<ol>
+    {% for post in posts %}
+    <li><a href="/post/{{post.id}}"><em>{{post}}</em></a></li>
+    {% endfor %}
+</ol> 
+{% else %}
+    <p><em>Not posted yet</em></p>
+{% endif %}
+
+
+
+{% endblock %}

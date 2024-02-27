@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron mt-4">
+    <h1 class="display-4">Welcome to Blog Post!</h1>
+    <p class="lead">Explore and read interesting blog posts from our community.</p>
+</div>
+
+<!-- Add your blog post list or other content here -->
+
+<div class="row mt-4 mx-auto">
+    {% for post in posts %}
+    <div class="col-md-4 my-2">
+        <div class="card">
+            {% if post.image %}
+            <a href="/post"><img src="{{MEDIA_URL}}{{ post.image }}" alt="{{MEDIA_URL}}\{{ post.image }}" class="card-img-top" height="207"></a>
+            <!-- <a href="/post"><img src="media/{{post.image}}" alt=""></a> -->
+            
+
+            {%else%}
+            <a href="/post"><img src="https://source.unsplash.com/1600x900/?blogs" class="card-img-top" alt="Sample Image"></a>
+                
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{post.title}}</h5>
+                <p class="card-text">{{ post.content|slice:":24" }}...</p>
+                <a href="/post/{{post.id}}" class="btn btn-primary">Read More</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <!-- Add more blog post cards as needed --> 
+
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}User List{% endblock %}
+
+{% block content %}
+<h1>User Info</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <!-- <th scope="col">Email</th> -->
+            <!-- <th scope="col">User Name</th> -->
+            <!-- <th scope="col">Password</th> -->
+            <th scope="col">CRUD</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for user in users%}
+        <tr>
+            <th scope="row">{{user.id}}</th>
+            <td><a href="/user/{{user.id}}">{{user.first_name}} {{user.last_name}}</a></td>
+            <!-- <td>{{user.email}}</td> -->
+            <!-- <td>{{user.user_name}}</td> -->
+            <!-- <td>
+                {% for _ in user.password %}<strong> * </strong>{% endfor %}
+            </td> -->
+
+            <td>
+                <a href="{{user.id}}/verification/" class="btn btn-warning">Edit Profile</a><br>
+                <a href="{{user.id}}/delete/" class="btn btn-danger mt-2">Delete Profile</a>
+            </td>
+        </tr>
+        {%endfor%}
+    </tbody>
+</table>    
+<a href="admin/verification/" class="btn btn-primary mt-2">+ Add Profile</a>
+
+
+{% endblock %}

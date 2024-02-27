@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}{{profile_type}} Profile Verification{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>{{profile_type}} Profile Verification</h2>
+    <h4>For {{user.first_name}}:</h4>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="user_name" class="form-label">User name</label>
+            <input type="" class="form-control" id="user_name" name="user_name" aria-describedby="emailHelp"
+                value="{{user_name}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
+        </div>
+        <!-- <div class="mb-3">
+            <select class="form-select" aria-label="Default select example" name = "Option" required>
+                <option selected disabled>Select</option>
+                <option value="user">User</option>
+                <option value="post">Post</option>
+                <option value="tag">Tag</option>
+                <option value="comment">Comment</option>
+              </select>
+        </div> -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div class="mt-2">
+        {% if verification_failed is True%}
+        <p class="text-danger">Invalid Credential</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

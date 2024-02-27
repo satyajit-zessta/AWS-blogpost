@@ -1,0 +1,23 @@
+<!-- templates/tags.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Tags{% endblock %}
+
+{% block content %}
+
+
+<h1>{{Action}} Tags</h1>
+<form method="POST">
+{% csrf_token %}
+{{tag_form}}
+
+<button type="submit" class="btn btn-primary" onclick="save()">Submit</button>
+
+</form>
+<script>
+    function save(){
+        alert('Data saved successfully');
+    }
+</script>
+{% endblock %}

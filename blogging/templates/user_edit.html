@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<form action="#" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="f_name" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="f_name" name="first_name"
+            value="{{ user.first_name }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="l_name" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="l_name" name="last_name"
+            value="{{ user.last_name }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="u_name" class="form-label">User Name</label>
+        <input type="text" class="form-control" id="u_name" name="user_name"
+            value="{{ user.user_name }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name = "email" value="{{ user.email }}" required>
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    {% if show_password %}
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="" class="form-control" id="exampleInputPassword1" name="password" rquired>
+    </div>
+    {% endif %}
+    
+    <div class="mb-3">
+        <label for="exampleInputPassword2" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword2" name="c_password" required>
+    </div>
+    <button type="submit" class="btn btn-primary" onclick="save()">Submit</button>
+    {% if invalid_password %}
+        <p class="text-danger mt-2">Invalid password <br>try again</p>
+    {% endif %}
+    {% if mismatch_password %}
+        <p class="text-warning mt-2">Password Mismatched<br>try again</p>
+    {% endif %}
+</form>
+
+<script>
+    function save(){
+        password = document.getElementById('exampleInputPassword2')
+        if (password.innerHTML)
+            alert("Data Saved successfully");
+        else
+            alert("Password field can't be blank")
+        console.log(password.innerHTML)
+
+    }
+</script>
+{% endblock %}

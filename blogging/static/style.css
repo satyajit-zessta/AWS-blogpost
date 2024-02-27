@@ -1,0 +1,83 @@
+/* style.css */
+
+/* Body and General Styling */
+body {
+    font-family: 'Roboto', sans-serif; /* Use Roboto font for better readability */
+    background-color: #f8f9fa; /* Set a light background color */
+    color: #343a40; /* Set text color */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* Improve line spacing for better readability */
+}
+
+.container {
+    max-width: 1200px; /* Limit container width for better readability */
+    margin: auto; /* Center the container horizontally */
+}
+
+/* Header Styling */
+header {
+    background-color: #343a40; /* Set header background color */
+    padding: 20px 0; /* Add padding to the header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.navbar-brand {
+    color: #fff; /* Set navbar brand text color */
+    font-size: 24px; /* Increase font size for the brand */
+    font-weight: bold; /* Set brand font weight to bold */
+    text-transform: uppercase; /* Transform brand text to uppercase */
+}
+
+.navbar-nav .nav-link {
+    color: #fff; /* Set navbar links text color */
+    font-size: 18px; /* Set font size for navbar links */
+    margin-left: 20px; /* Add space between navbar links */
+    text-transform: uppercase; /* Transform navbar links text to uppercase */
+    transition: color 0.3s ease; /* Add transition effect */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffc107; /* Change color on hover */
+}
+
+.navbar-toggler-icon {
+    color: #fff; /* Set color for the toggler icon */
+}
+
+/* Content Styling */
+.content {
+    padding: 20px 0; /* Add padding to the content */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #343a40; /* Set footer background color */
+    color: #fff; /* Set text color for the footer */
+    padding: 20px 0; /* Add padding to the footer */
+    text-align: center; /* Center-align text */
+    border-top: 2px solid #fff; /* Add top border with white color */
+}
+
+/* Lead Styling */
+
+
+/* Links Styling */
+a {
+    color: #007bff; /* Set link color */
+    text-decoration: none; /* Remove underline from links */
+    transition: color 0.3s ease; /* Add transition effect */
+}
+
+a:hover {
+    color: #ffc107; /* Change color on hover */
+}
+
+/* Button Styling */
+
+
+.btn:hover {
+    background-color: #73b000; /* Darken background color on hover */
+    transform: translateY(-3px); /* Move button up slightly on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+}

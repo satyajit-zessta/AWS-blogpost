@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}comments View{% endblock %}
+
+{% block content %}
+<h1>Comments</h1>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <!-- <th scope="col">Email</th> -->
+                <!-- <th scope="col">Post</th> -->
+                <th scope="col">Content</th>
+                <!-- <th scope="col">Date</th> -->
+                <th scope="col">CRUD</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for comment in comments%}
+            <tr>
+                <th scope="row">{{comment.id}}</th>
+                <td><a href="/comment/{{comment.id}}">{{comment.name}}</a></td>
+                <!-- <td>{{comment.email}}</td> -->
+                <!-- <td>
+                    {% for post in comment.post.all %}
+                        <li><a href="/post/{{post.id}}">{{post}}</a></li>
+                    {% endfor %}
+                </td> -->
+                <td>{{comment.content}}</td>
+                <!-- <td>{{comment.date}}</td> -->
+                <td>
+                    <a href="{{comment.id}}/verification" class="text-success"><i class="material-icons">edit</i></a><br>
+                    <a href="{{comment.id}}/delete" class="mt-2 text-danger"><i class="material-icons">delete</i></a>
+                </td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+
+    <a href="verification" class="btn btn-primary mt-2">+ Add comments</a>
+{% endblock %}

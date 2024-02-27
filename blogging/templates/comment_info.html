@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Comment View{% endblock %}
+
+{% block content %}
+
+<h1>Comment</h1>
+<hr>
+
+<p class="lead">Name: {{comment.name}}
+    {{post.date}}</p>
+<p class="lead">Email: {{comment.email}}
+    {{post.date}}</p>
+<hr>
+<p class="lead">Posts:
+<ul>
+    {% for post in comment.post.all %}
+    <li><a href="/post/{{post.id}}">{{post}}</a></li>
+    {% endfor %}
+</ul>
+<hr>
+<br>
+<h5>Publication Date:</h5> {{comment.date}}
+</p>
+<div>
+    <h4>Content:</h4>
+    <p>{{comment.content | linebreaks}}</p>
+</div>
+<hr>
+<a href="{{comment.id}}/verification" class="btn btn-info mb-4">Edit Comment</a><br>
+
+{% endblock %}
